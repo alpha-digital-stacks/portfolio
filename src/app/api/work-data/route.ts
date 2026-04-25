@@ -17,7 +17,7 @@ const workData = [
     image: "/images/work/crypto.png",
     title: "CryptoCurrency Dashboard & Exchange",
     client: "CryptoTech",
-    link: "https://crypto-project-link.com", 
+    link: "https://crypto-upgrade.vercel.app/", 
   },
   {
     image: "/images/work/emr.jpeg",
