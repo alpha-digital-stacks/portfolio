@@ -24,5 +24,3 @@ const page = () => {
 
 export default page
 
-// GIT TOKEN : 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
-
