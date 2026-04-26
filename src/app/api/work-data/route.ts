@@ -2,22 +2,34 @@ import { NextResponse } from "next/server";
 
 const workData = [
   {
-    image: "/images/work/automotor.jpeg",
-    title: "Auto Motor Auctions - Vehicle Bidding Platform",
-    client: "AutoMotor",
-    link: "http://automotorauctions.com/",
-  },
-  {
     image: "/images/work/collubi.jpeg",
     title: "Collubi - Influencer Marketing Hub",
     client: "Collubi",
     link: "https://collubi.com/",
   },
   {
-    image: "/images/work/crypto.png",
-    title: "CryptoCurrency Dashboard & Exchange",
-    client: "CryptoTech",
-    link: "https://crypto-upgrade.vercel.app/", 
+    image: "/images/work/rentatron.jpeg",
+    title: "Rentatron - Equipment Rental Solution",
+    client: "Rentatron",
+    link: "https://rentatron.vercel.app/",
+  },
+  {
+    image: "/images/work/shadow-match.png",
+    title: "Shadow Match - Behavioral Assessment Tool",
+    client: "Shadow Match",
+    link: "https://shadowmatchuser.dev-bt.xyz/",
+  },
+  {
+    image: "/images/work/orangi-store.png",
+    title: "Orangi Store - E-commerce Marketplace",
+    client: "Orangi Store",
+    link: "https://orangistore.com/",
+  },
+  {
+    image: "/images/work/premium.jpeg",
+    title: "Premium ID - Identity & Branding Agency",
+    client: "PremiumID",
+    link: "https://www.premiumid.it/",
   },
   {
     image: "/images/work/emr.jpeg",
@@ -30,6 +42,18 @@ const workData = [
     title: "Head2Head - Competitive Gaming Platform",
     client: "H2H Gaming",
     link: "https://head2head.vercel.app/",
+  },
+  {
+    image: "/images/work/automotor.jpeg",
+    title: "Auto Motor Auctions - Vehicle Bidding Platform",
+    client: "AutoMotor",
+    link: "http://automotorauctions.com/",
+  },
+  {
+    image: "/images/work/crypto.png",
+    title: "CryptoCurrency Dashboard & Exchange",
+    client: "CryptoTech",
+    link: "https://crypto-upgrade.vercel.app/", 
   },
   {
     image: "/images/work/immsy.jpeg",
@@ -48,30 +72,6 @@ const workData = [
     title: "Dewey AI - Smart Knowledge Base",
     client: "Dewey AI",
     link: "https://deweyai.dev-um.xyz/",
-  },
-  {
-    image: "/images/work/orangi-store.png",
-    title: "Orangi Store - E-commerce Marketplace",
-    client: "Orangi Store",
-    link: "https://orangistore.com/",
-  },
-  {
-    image: "/images/work/premium.jpeg",
-    title: "Premium ID - Identity & Branding Agency",
-    client: "PremiumID",
-    link: "https://www.premiumid.it/",
-  },
-  {
-    image: "/images/work/rentatron.jpeg",
-    title: "Rentatron - Equipment Rental Solution",
-    client: "Rentatron",
-    link: "https://rentatron.vercel.app/",
-  },
-  {
-    image: "/images/work/shadow-match.png",
-    title: "Shadow Match - Behavioral Assessment Tool",
-    client: "Shadow Match",
-    link: "https://shadowmatchuser.dev-bt.xyz/",
   },
   {
     image: "/images/work/sirajia.jpeg",
