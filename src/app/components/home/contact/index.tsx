@@ -170,6 +170,7 @@ const Contact = () => {
                       <Link
                         href={value?.href}
                         className="text-base sm:text-lg font-normal text-muted-foreground hover:text-primary"
+                        target="_blank"
                       >
                         {value?.title}
                       </Link>

@@ -54,13 +54,13 @@ const ContactBar = () => {
             {/* Social Items */}
             <div className="flex items-center justify-center md:justify-end gap-4 md:gap-2.5">
               {contactBarData?.socialItems?.map((value: any, index: number) => (
-                <Link key={index} href={value?.link}>
+                <Link key={index} href={value?.link} target="_blank">
                   <Image
                     src={value?.icon}
                     alt={value?.platform}
                     width={30}
                     height={30}
-                    className="hover:opacity-80"
+                    className="hover:opacity-80 dark:invert"
                   />
                 </Link>
               ))}

@@ -82,7 +82,7 @@ const LatestWork = () => {
                           <h5>{value?.title}</h5>
                         </Link>
                         <Image
-                          src={"/images/icon/right-arrow-icon.svg"}
+                          src="/images/icon/right-arrow-icon.svg"
                           alt="right-arrow-icon"
                           width={30}
                           height={30}
