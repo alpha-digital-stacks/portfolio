@@ -23,13 +23,13 @@ const workData = [
     image: "/images/work/orangi-store.png",
     title: "Orangi Store - E-commerce Marketplace",
     client: "Orangi Store",
-    link: "https://orangistore.com/",
+    link: "https://www.orangistore.com/",
   },
   {
     image: "/images/work/premium.jpeg",
     title: "Premium ID - Identity & Branding Agency",
     client: "PremiumID",
-    link: "https://https://premiumid-ads.vercel.app/",
+    link: "https://premiumid-ads.vercel.app/",
   },
   {
     image: "/images/work/emr.jpeg",
@@ -53,7 +53,7 @@ const workData = [
     image: "/images/work/crypto.png",
     title: "CryptoCurrency Dashboard & Exchange",
     client: "CryptoTech",
-    link: "https://https://crypto-new-ads.vercel.app",
+    link: "https://crypto-new-ads.vercel.app",
   },
   {
     image: "/images/work/immsy.jpeg",
