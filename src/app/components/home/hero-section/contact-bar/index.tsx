@@ -52,7 +52,7 @@ const ContactBar = () => {
             </div>
 
             {/* Social Items */}
-            <div className="flex items-center justify-center md:justify-end gap-4 md:gap-2.5">
+            <div className="flex items-center justify-center md:justify-end gap-4">
               {contactBarData?.socialItems?.map((value: any, index: number) => (
                 <Link key={index} href={value?.link} target="_blank">
                   <Image

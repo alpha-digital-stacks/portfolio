@@ -16,20 +16,20 @@ const contactBar = {
     },
   ],
   socialItems: [
+    // {
+    //   platform: "upwork",
+    //   icon: "/images/icon/upwork-icon.svg",
+    //   link: "https://www.upwork.com/freelancers/~011c42c29eb76d4d4f?mp_source=share",
+    // },
     {
-      platform: "upwork",
-      icon: "/images/icon/upwork-icon.svg",
-      link: "https://www.upwork.com/freelancers/~011c42c29eb76d4d4f?mp_source=share",
+      platform: "github",
+      icon: "/images/icon/github.svg",
+      link: "https://github.com/alpha-digital-stacks",
     },
     {
-      platform: "linkedin",
-      icon: "/images/icon/linkedin-icon.svg",
-      link: "https://www.linkedin.com/in/junaid-junaid-586877373",
-    },
-    {
-      platform: "facebook",
-      icon: "/images/icon/facebook-icon.svg",
-      link: "https://facebook.com",
+      platform: "whatsapp",
+      icon: "/images/icon/whatsapp-icon.svg",
+      link: "https://wa.me/923400262456",
     },
   ],
 };
@@ -82,17 +82,17 @@ const educationData = {
 
 const contactLinks = {
   socialLinks: [
+    // {
+    //   title: "Upwork",
+    //   href: "https://www.upwork.com/freelancers/~011c42c29eb76d4d4f?mp_source=share",
+    // },
     {
-      title: "Upwork",
-      href: "https://www.upwork.com/freelancers/~011c42c29eb76d4d4f?mp_source=share",
+      title: "Github",
+      href: "https://github.com/alpha-digital-stacks",
     },
     {
-      title: "LinkedIn",
-      href: "https://www.linkedin.com/in/junaid-junaid-586877373",
-    },
-    {
-      title: "Facebook",
-      href: "https://facebook.com",
+      title: "Whatsapp",
+      href: "https://wa.me/923400262456",
     },
   ],
   contactInfo: [
