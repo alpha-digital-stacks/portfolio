@@ -3,97 +3,97 @@ import { NextResponse } from "next/server";
 const workData = [
   {
     image: "/images/work/collubi.jpeg",
-    title: "Collubi - Influencer Marketing Hub",
+    title: "Multi-Vendor E-Commerce & Real-Time Bidding Platform",
     client: "Collubi",
     link: "https://collubi.com/",
   },
   {
     image: "/images/work/rentatron.jpeg",
-    title: "Rentatron - Equipment Rental Solution",
+    title: "Peer-to-Peer Car Rental Platform with Admin Portal",
     client: "Rentatron",
     link: "https://rentatron.vercel.app/",
   },
   {
     image: "/images/work/shadow-match.png",
-    title: "Shadow Match - Behavioral Assessment Tool",
+    title: "Multi-Tenant Healthcare & Clinic Management System",
     client: "Shadow Match",
     link: "https://shadowmatchuser-ads.vercel.app",
   },
   {
     image: "/images/work/orangi-store.png",
-    title: "Orangi Store - E-commerce Marketplace",
+    title: "Localized Multi-Vendor E-Commerce Platform with SEO Optimization",
     client: "Orangi Store",
     link: "https://www.orangistore.com/",
   },
   {
     image: "/images/work/premium.jpeg",
-    title: "Premium ID - Identity & Branding Agency",
+    title: "High-Conversion International Landing Page & Brand Identity",
     client: "PremiumID",
     link: "https://premiumid-ads.vercel.app/",
   },
   {
     image: "/images/work/emr.jpeg",
-    title: "EMR Front - Healthcare Management System",
+    title: "5-Tier Hospital Management System (EMR)",
     client: "EMR Health",
     link: "https://emrfront.netlify.app/",
   },
   {
     image: "/images/work/head2head.jpeg",
-    title: "Head2Head - Competitive Gaming Platform",
+    title: "Interactive Sports Analytics & Football Team Builder",
     client: "H2H Gaming",
     link: "https://head2head-ads.vercel.app",
   },
   {
     image: "/images/work/automotor.jpeg",
-    title: "Auto Motor Auctions - Vehicle Bidding Platform",
+    title: "Real-Time Car Auction & Vehicle Data Portal",
     client: "AutoMotor",
     link: "http://automotor-ads.vercel.app/",
   },
   {
     image: "/images/work/crypto.png",
-    title: "CryptoCurrency Dashboard & Exchange",
+    title: "Cryptocurrency Exchange Platform — Fast & Secure Trading",
     client: "CryptoTech",
     link: "https://crypto-new-ads.vercel.app",
   },
   {
     image: "/images/work/immsy.jpeg",
-    title: "Immsy - Immersive Digital Experiences",
+    title: "High-End Immersive UI — Interactive Web Experience",
     client: "Immsy",
     link: "https://immsy-ads.vercel.app/",
   },
   {
     image: "/images/work/lilia.jpeg",
-    title: "Lilia AI - Intelligent Business Solutions",
+    title: "CNN & LLM Solution for Medical Imaging — Brain Aneurysm Detection",
     client: "Lilia AI",
     link: "https://liliaai-ads.vercel.app",
   },
   {
     image: "/images/work/mya.jpeg",
-    title: "Dewey AI - Smart Knowledge Base",
+    title: "AI-Powered Interactive Data Visualization Platform",
     client: "Dewey AI",
     link: "https://deweyai-ads.vercel.app",
   },
   {
     image: "/images/work/sirajia.jpeg",
-    title: "Sirajia Solutions - Educational Tech",
+    title: "Corporate Branding & Digital Presence — IT Solutions Company",
     client: "Sirajia Sol",
     link: "https://sirajiasol-ads.vercel.app/",
   },
   {
     image: "/images/work/transfer.jpeg",
-    title: "Secure Transfer - Fintech Transaction App",
+    title: "Germany-Based Airport Transfer & Logistics Booking System",
     client: "Transfer511",
     link: "https://transfer511-ads.vercel.app/",
   },
   {
     image: "/images/work/victor-design.jpeg",
-    title: "Victor Design - Creative Portfolio & Studio",
+    title: "Sleek Minimalist Portfolio Website for Creative Professionals",
     client: "Victor Design",
     link: "http://victordesign-ads.vercel.app",
   },
   {
     image: "/images/work/digital-experts.jpeg",
-    title: "Moon Shot - Creative Portfolio & Studio",
+    title: "Creative Digital Agency Website — Onshot Tech",
     client: "Moonshot",
     link: "https://moonshotanimations-ads.vercel.app/",
   },
@@ -104,3 +104,6 @@ export const GET = async () => {
     workData,
   });
 };
+
+
+
