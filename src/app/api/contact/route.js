@@ -21,7 +21,7 @@ export async function POST(req) {
         });
     } catch (error) {
         return Response.json(
-            { error: "Something went wrong" },
+            { error: error },
             { status: 500 }
         );
     }
