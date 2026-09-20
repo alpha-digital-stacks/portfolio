@@ -1,13 +1,7 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import SectionHeading from "../../shared/section-heading";
 
 const EducationSkills = () => {
   const [educationData, setEductionData] = useState<any>(null);
@@ -27,98 +21,70 @@ const EducationSkills = () => {
     fetchData();
   }, []);
 
-  const chunkArray = (arr: any[], size: number) => {
-    const result = [];
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
-    }
-    return result;
-  };
-
-  const skillChunks = chunkArray(educationData?.skills || [], 6);
-
   return (
-    <section>
-      <div className="border-t border-muted overflow-hidden">
-        <div className="container relative z-10">
+    <section id="skills" className="scroll-mt-28 bg-background">
+      <div className="relative overflow-hidden">
+        <div className="container relative z-10 py-16 md:py-28">
           <Image
             src={"/images/home/education-skill/edu-skill-vector.svg"}
             alt="vector"
-            width={260}
-            height={170}
-            className="no-print absolute top-0 left-0 transform -translate-y-1/2"
+            width={220}
+            height={140}
+            className="no-print absolute top-8 left-6 opacity-40 w-auto h-auto"
           />
-          <div className="relative z-10 py-16 md:py-32">
-            <div className="flex items-center justify-between gap-2 border-b border-primary pb-7 mb-9 xl:mb-16">
-              <h2>Education & Skills</h2>
-              <p className="text-xl text-primary">( 03 )</p>
-            </div>
-            <div className="flex flex-col lg:flex-row items-center gap-10 xl:gap-20">
-              <div className="w-full lg:max-w-md flex flex-col gap-0 xl:gap-8">
-                {educationData?.education?.map((value: any, index: any) => {
-                  return (
-                    <div key={index} className="flex items-start gap-6">
-                      <div className="no-print mt-2.5 w-3.5 h-3.5 rounded-full border bg-white flex items-center justify-center border-black">
-                        <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
-                      </div>
-                      <div className="flex-1 flex flex-col gap-2">
-                        <h5>{value?.title}</h5>
-                        <p className="font-normal">{value?.description}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <Carousel opts={{ align: "start" }} className="w-full">
-                <div className="absolute -top-14 right-0 flex gap-2">
-                  <CarouselPrevious className="static translate-y-0" />
-                  <CarouselNext className="static translate-y-0" />
+          <SectionHeading
+            title="Education & Skills"
+            index="02"
+            eyebrow="Craft"
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-10 xl:gap-16">
+            <div className="relative space-y-6">
+              <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border hidden sm:block" />
+              {educationData?.education?.map((value: any, index: number) => (
+                <div key={index} className="relative flex gap-4 sm:pl-0">
+                  <div className="no-print mt-2 h-4 w-4 shrink-0 rounded-full border-2 border-primary bg-background" />
+                  <div className="rounded-2xl border border-border bg-card p-5">
+                    <h5 className="text-lg xl:text-xl">{value?.title}</h5>
+                    <p className="mt-2 text-sm md:text-base">
+                      {value?.description}
+                    </p>
+                  </div>
                 </div>
-                <CarouselContent>
-                  {skillChunks?.map((group: any[], index: number) => (
-                    <CarouselItem key={index} className="basis-full">
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 xl:gap-7">
-                        {group?.map((value: any, i: number) => (
-                          <div
-                            key={i}
-                            className="p-4 xl:p-6 border border-muted rounded-lg flex flex-col gap-5 items-center justify-between"
-                          >
-                            <div className="flex flex-col items-center gap-5">
-                              <Image
-                                src={value?.icon}
-                                alt="icon"
-                                width={60}
-                                height={60}
-                              />
-                              <p className="text-center">{value?.name}</p>
-                            </div>
+              ))}
+            </div>
 
-                            <div className="flex gap-1">
-                              {[...Array(5)].map((_, j) => (
-                                <svg
-                                  key={j}
-                                  width="9"
-                                  height="9"
-                                  viewBox="0 0 9 9"
-                                >
-                                  <rect
-                                    width="9"
-                                    height="9"
-                                    rx="4.5"
-                                    fill={
-                                      j < value?.rating ? "#FE4300" : "#C0D8E0"
-                                    }
-                                  />
-                                </svg>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+              {educationData?.skills?.map((value: any, i: number) => (
+                <div
+                  key={i}
+                  className="group rounded-2xl border border-border bg-card p-4 md:p-5 flex flex-col items-center justify-between gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-muted">
+                      <Image
+                        src={value?.icon}
+                        alt={value?.name}
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 object-contain"
+                      />
+                    </div>
+                    <p className="text-center text-sm md:text-base text-foreground">
+                      {value?.name}
+                    </p>
+                  </div>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, j) => (
+                      <span
+                        key={j}
+                        className={`h-1.5 w-1.5 rounded-full ${
+                          j < value?.rating ? "bg-primary" : "bg-border"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

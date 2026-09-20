@@ -22,49 +22,46 @@ const ContactBar = () => {
   }, []);
 
   return (
-    <section>
-      <div className="border-t border-muted">
-        <div className="container">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 md:py-7">
-            {/* Contact Items */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-5 lg:gap-11">
-              {contactBarData?.contactItems?.map(
-                (value: any, index: number) => (
-                  <Link
-                    key={index}
-                    href={value?.link}
-                    className="flex items-center gap-2 lg:gap-4 text-sm md:text-base"
-                  >
-                    <Image
-                      src={value?.icon}
-                      alt={value?.type}
-                      width={24}
-                      height={24}
-                      className="min-w-6 min-h-6"
-                    />
-
-                    <h6 className="text-sm md:text-base xl:text-xl hover:text-primary">
-                      {value?.label}
-                    </h6>
-                  </Link>
-                )
-              )}
-            </div>
-
-            {/* Social Items */}
-            <div className="flex items-center justify-center md:justify-end gap-4">
-              {contactBarData?.socialItems?.map((value: any, index: number) => (
-                <Link key={index} href={value?.link} target="_blank">
+    <section className="relative z-10 -mt-4">
+      <div className="container">
+        <div className="surface-card flex flex-col lg:flex-row items-center justify-between gap-5 px-5 py-5 md:px-8">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            {contactBarData?.contactItems?.map(
+              (value: any, index: number) => (
+                <Link
+                  key={index}
+                  href={value?.link}
+                  className="flex items-center gap-3 rounded-full border border-border bg-background px-4 py-2.5 text-sm md:text-base hover:border-primary/50 hover:text-primary transition-colors"
+                >
                   <Image
                     src={value?.icon}
-                    alt={value?.platform}
-                    width={30}
-                    height={30}
-                    className="hover:opacity-80 dark:invert"
+                    alt={value?.type}
+                    width={20}
+                    height={20}
+                    className="min-w-5 min-h-5"
                   />
+                  <span>{value?.label}</span>
                 </Link>
-              ))}
-            </div>
+              )
+            )}
+          </div>
+          <div className="flex items-center gap-3">
+            {contactBarData?.socialItems?.map((value: any, index: number) => (
+              <Link
+                key={index}
+                href={value?.link}
+                target="_blank"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background hover:border-primary hover:bg-primary/8 transition-colors"
+              >
+                <Image
+                  src={value?.icon}
+                  alt={value?.platform}
+                  width={22}
+                  height={22}
+                  className="dark:invert"
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

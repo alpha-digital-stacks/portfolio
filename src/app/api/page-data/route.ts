@@ -4,15 +4,15 @@ const contactBar = {
   contactItems: [
     {
       type: "email",
-      label: "talhaanxaritn@gmail.com",
+      label: "junaidsalam639@gmail.com",
       icon: "/images/icon/mail-icon.svg",
-      link: "mailto:talhaanxaritn@gmail.com",
+      link: "mailto:junaidsalam639@gmail.com",
     },
     {
       type: "phone",
-      label: "+92 3400262456",
+      label: "+92 3708622374",
       icon: "/images/icon/call-icon.svg",
-      link: "tel:+923400262456",
+      link: "tel:+923708622374",
     },
   ],
   socialItems: [
@@ -29,7 +29,7 @@ const contactBar = {
     {
       platform: "whatsapp",
       icon: "/images/icon/whatsapp-icon.svg",
-      link: "https://wa.me/923400262456",
+      link: "https://wa.me/923708622374",
     },
   ],
 };
@@ -92,19 +92,19 @@ const contactLinks = {
     },
     {
       title: "Whatsapp",
-      href: "https://wa.me/923400262456",
+      href: "https://wa.me/923708622374",
     },
   ],
   contactInfo: [
     {
       type: "email",
-      label: "talhaanxaritn@gmail.com",
-      link: "mailto:talhaanxaritn@gmail.com",
+      label: "junaidsalam639@gmail.com",
+      link: "mailto:junaidsalam639@gmail.com",
     },
     {
       type: "phone",
-      label: "+92 3400262456",
-      link: "tel:+923400262456",
+      label: "+92 3708622374",
+      link: "tel:+923708622374",
     },
   ],
 };

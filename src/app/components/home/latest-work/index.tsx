@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import SectionHeading from "../../shared/section-heading";
 
 const LatestWork = () => {
   const [workData, setWorkData] = useState<any>(null);
@@ -22,79 +23,57 @@ const LatestWork = () => {
   }, []);
 
   return (
-    <section>
-      <div className="bg-muted">
+    <section id="work" className="scroll-mt-28 bg-background">
+      <div className="py-16 md:py-28">
         <div className="container">
-          <div className="py-16 xl:py-32 ">
-            <div className="flex items-center justify-between gap-2 border-b border-primary pb-7 mb-9 md:mb-16">
-              <h2>Latest Works</h2>
-              <p className="text-xl text-primary">( 04 )</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
-              {workData?.map((value: any, index: any) => {
-                return (
-                  <div
-                    key={index}
-                    className="group flex flex-col gap-3 xl:gap-6"
-                  >
-                    <div className="relative">
-                      <Image
-                        src={value?.image}
-                        alt="image"
-                        width={570}
-                        height={414}
-                        className="rounded-lg w-full h-full object-cover"
+          <SectionHeading
+            title="Latest Works"
+            index="03"
+            eyebrow="Selected projects"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 xl:gap-8">
+            {workData?.map((value: any, index: number) => (
+              <Link
+                key={index}
+                href={`${value.link}`}
+                target="_blank"
+                className="group surface-card overflow-hidden"
+              >
+                <div className="relative overflow-hidden bg-background">
+                  <Image
+                    src={value?.image}
+                    alt={value?.title}
+                    width={570}
+                    height={414}
+                    className="w-full h-[240px] md:h-[300px] object-contain p-3 transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M7 17L17 7M17 7H8M17 7V16"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
-                      <Link
-                        href={`${value.link}`}
-                        target="_blank"
-                        className="absolute top-0 left-0 backdrop-blur-xs bg-primary/15 w-full h-full hidden group-hover:flex rounded-lg"
-                      >
-                        <span className="flex justify-center items-center p-5 w-full">
-                          <svg
-                            width="65"
-                            height="64"
-                            viewBox="0 0 65 64"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="0.333374"
-                              width="64"
-                              height="64"
-                              rx="32"
-                              fill="#FE4300"
-                            />
-                            <path
-                              d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
-                              stroke="#FFFF"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </Link>
-                    </div>
-                    <div className="flex flex-col gap-0 xl:gap-2">
-                      <div className="flex items-center justify-between">
-                        <Link href={`${value.link}`} target="_blank">
-                          <h5>{value?.title}</h5>
-                        </Link>
-                        <Image
-                          src="/images/icon/right-arrow-icon.svg"
-                          alt="right-arrow-icon"
-                          width={30}
-                          height={30}
-                          className="dark:invert"
-                        />
-                      </div>
-                      <p>Client: {value?.client}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+                    </svg>
+                  </span>
+                </div>
+                <div className="p-5 md:p-6">
+                  <p className="text-xs tracking-[0.2em] uppercase text-primary mb-2">
+                    {value?.client}
+                  </p>
+                  <h5 className="text-lg xl:text-xl group-hover:text-primary transition-colors">
+                    {value?.title}
+                  </h5>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

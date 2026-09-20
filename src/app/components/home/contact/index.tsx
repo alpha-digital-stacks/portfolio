@@ -33,10 +33,12 @@ const Contact = () => {
   }, []);
 
   const reset = () => {
-    formData.name = "";
-    formData.number = "";
-    formData.email = "";
-    formData.message = "";
+    setFormData({
+      name: "",
+      number: "",
+      email: "",
+      message: "",
+    });
   };
 
   const handleSubmit = async (e: any) => {
@@ -61,6 +63,7 @@ const Contact = () => {
         console.log(error.message);
       });
   };
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -69,131 +72,168 @@ const Contact = () => {
     }));
   };
 
+  const contactCards = [
+    {
+      type: "email",
+      title: "Email",
+      icon: "/images/icon/mail-icon.svg",
+    },
+    {
+      type: "phone",
+      title: "Phone",
+      icon: "/images/icon/call-icon.svg",
+    },
+  ];
+
   return (
-    <section className="no-print">
-      <div className="container">
-        <div className="pt-16 md:pt-32 pb-20">
-          <div className="flex items-center justify-between gap-2 border-b border-primary pb-7 mb-9 md:mb-16">
-            <h2>Contact Me</h2>
-            <p className="text-xl text-primary">( 05 )</p>
+    <section id="contact" className="no-print scroll-mt-28 bg-background">
+      <div className="container py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-12 xl:gap-20 items-start">
+          <div>
+            <p className="text-xs md:text-sm tracking-[0.28em] uppercase text-primary font-medium">
+              Let’s collaborate
+            </p>
+            <h2 className="mt-3 text-3xl md:text-5xl lg:text-[56px] leading-tight">
+              Contact Me
+            </h2>
+            <p className="mt-5 max-w-md text-base md:text-lg">
+              Have a product idea, a rebuild, or a realtime system in mind? Tell
+              me what you&apos;re building — I usually reply within a day.
+            </p>
+
+            <div className="mt-10 space-y-4">
+              {contactData?.contactInfo?.map((value: any, index: number) => {
+                const meta = contactCards.find((item) => item.type === value.type);
+                return (
+                  <Link
+                    key={index}
+                    href={value?.link}
+                    className="flex items-center gap-4 rounded-2xl border border-border px-5 py-4 hover:border-primary/50 transition-colors"
+                  >
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                      <Image
+                        src={meta?.icon || "/images/icon/mail-icon.svg"}
+                        alt={value?.type}
+                        width={22}
+                        height={22}
+                      />
+                    </span>
+                    <span>
+                      <span className="block text-xs tracking-[0.18em] uppercase text-muted-foreground">
+                        {meta?.title}
+                      </span>
+                      <span className="mt-1 block text-base md:text-lg text-foreground">
+                        {value?.label}
+                      </span>
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {contactData?.socialLinks?.map((value: any, index: number) => (
+                <Link
+                  key={index}
+                  href={value?.href}
+                  className="rounded-full border border-border px-5 py-2.5 text-sm hover:border-primary hover:text-primary transition-colors"
+                  target="_blank"
+                >
+                  {value?.title}
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-7 sm:gap-12">
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <Label htmlFor="name" className="label">
-                      Name *
-                    </Label>
-                    <Input
-                      required
-                      className="w-full border-0 border-b border-border rounded-none focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="number" className="label">
-                      Phone *
-                    </Label>
-                    <Input
-                      required
-                      className="w-full border-0 border-b border-border rounded-none focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
-                      id="number"
-                      type="number"
-                      name="number"
-                      value={formData.number}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-[1.75rem] border border-border p-6 md:p-8"
+          >
+            <p className="text-sm tracking-[0.16em] uppercase text-muted-foreground mb-6">
+              Send a message
+            </p>
+            <div className="flex flex-col gap-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="email" className="label">
-                    Email *
+                  <Label htmlFor="name" className="label">
+                    Name *
                   </Label>
                   <Input
                     required
-                    className="w-full border-0 border-b border-border rounded-none focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                    className="w-full border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                   />
                 </div>
                 <div>
-                  <Label htmlFor="message" className="label">
-                    Message *
+                  <Label htmlFor="number" className="label">
+                    Phone *
                   </Label>
-                  <Textarea
+                  <Input
                     required
-                    className="w-full border-0 border-b border-border rounded-none focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
-                    name="message"
-                    id="message"
-                    value={formData.message}
+                    className="w-full border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
+                    id="number"
+                    type="number"
+                    name="number"
+                    value={formData.number}
                     onChange={handleChange}
-                    rows={2}
                   />
                 </div>
-                {submitted && (
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={"/images/icon/success-icon.svg"}
-                      alt="success-icon"
-                      width={30}
-                      height={30}
-                    />
-                    <p className="text-muted-foreground">
-                      Great!!! Email has been Successfully Sent. We will get in
-                      touch asap.
-                    </p>
-                  </div>
-                )}
-                <Button
-                  variant="outline"
-                  type="submit"
-                  className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
-                >
-                  <span className="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
-                    Send Now
-                  </span>
-                </Button>
               </div>
-            </form>
-            <div className="flex flex-col sm:flex-row md:flex-col justify-between gap-5 md:gap-20 items-center md:items-end">
-              <div className="flex flex-wrap flex-row md:flex-col items-start md:items-end gap-4 md:gap-6">
-                {contactData?.socialLinks?.map((value: any, index: any) => {
-                  return (
-                    <div key={index}>
-                      <Link
-                        href={value?.href}
-                        className="text-base sm:text-lg font-normal text-muted-foreground hover:text-primary"
-                        target="_blank"
-                      >
-                        {value?.title}
-                      </Link>
-                    </div>
-                  );
-                })}
+              <div>
+                <Label htmlFor="email" className="label">
+                  Email *
+                </Label>
+                <Input
+                  required
+                  className="w-full border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
               </div>
-              <div className="flex flex-wrap justify-center gap-5 lg:gap-11 items-end">
-                {contactData?.contactInfo?.map((value: any, index: any) => {
-                  return (
-                    <div key={index}>
-                      <Link
-                        href={value?.link}
-                        className="text-base lg:text-lg font-normal border-b border-black pb-3 hover:text-primary hover:border-primary"
-                      >
-                        {value?.label}
-                      </Link>
-                    </div>
-                  );
-                })}
+              <div>
+                <Label htmlFor="message" className="label">
+                  Message *
+                </Label>
+                <Textarea
+                  required
+                  className="w-full border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-primary! focus-visible:outline-none py-2!"
+                  name="message"
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                />
               </div>
+              {submitted && (
+                <div className="flex items-center gap-2 rounded-2xl bg-primary/10 px-4 py-3">
+                  <Image
+                    src={"/images/icon/success-icon.svg"}
+                    alt="success-icon"
+                    width={24}
+                    height={24}
+                  />
+                  <p className="text-sm">
+                    Message sent. I&apos;ll get back to you soon.
+                  </p>
+                </div>
+              )}
+              <Button
+                variant="outline"
+                type="submit"
+                className="btn-fill relative overflow-hidden cursor-pointer w-fit h-full py-3 md:py-5 px-6 md:px-8 border border-primary rounded-full group bg-transparent"
+              >
+                <span className="relative z-10 text-base md:text-lg font-medium text-primary group-hover:text-white transition-colors duration-300">
+                  Send Now
+                </span>
+              </Button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

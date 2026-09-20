@@ -12,11 +12,11 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Talha | Full-Stack Developer (React, Next.js, Node.js)",
+  title: "Muhammad Junaid | Full-Stack Developer (React, Next.js, Node.js)",
   description:
-    "Muhammad Talha is a Full-Stack Developer specializing in React.js, Next.js, Node.js, and React Native. Experienced in building scalable web and mobile applications, real-time systems, and modern UI/UX designs.",
+    "Muhammad Junaid is a Full-Stack Developer specializing in React.js, Next.js, Node.js, and React Native. Experienced in building scalable web and mobile applications, real-time systems, and modern UI/UX designs.",
   keywords: [
-    "Muhammad Talha",
+    "Muhammad Junaid",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
@@ -25,14 +25,18 @@ export const metadata: Metadata = {
     "MERN Stack Developer",
     "Frontend Developer Karachi",
   ],
-  authors: [{ name: "Muhammad Talha" }],
-  creator: "Muhammad Talha",
+  authors: [{ name: "Muhammad Junaid" }],
+  creator: "Muhammad Junaid",
+  icons: {
+    icon: "/images/logo/logo.svg",
+    apple: "/images/logo/logo.svg",
+  },
   openGraph: {
-    title: "Muhammad Talha | Full-Stack Developer",
+    title: "Muhammad Junaid | Full-Stack Developer",
     description:
       "Building scalable web & mobile apps with React, Next.js, Node.js & React Native.",
     url: "https://your-domain.com",
-    siteName: "Muhammad Talha Portfolio",
+    siteName: "Muhammad Junaid Portfolio",
     type: "website",
   },
 };
@@ -54,7 +58,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
-          <div className="fixed right-10 bottom-10 z-50">
+          <div className="fixed right-5 bottom-5 sm:right-8 sm:bottom-8 z-50">
             <ModeToggle />
           </div>
         </ThemeProvider>
