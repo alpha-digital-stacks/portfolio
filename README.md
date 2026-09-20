@@ -9,6 +9,7 @@ If you’re looking for a **high-quality Next.js resume or portfolio template** 
 
 ---
 
+
 ## ✨ Key Features
 
 - ⚡ Built with **Next.js** for optimized performance and SEO  
